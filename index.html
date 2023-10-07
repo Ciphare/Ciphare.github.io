@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPortfolio</title>
+    <style>
+        header, main, footer { text-align: center; }
+        main { display: flex; justify-content: center; align-items: center; min-height: 100vh; flex-direction: column; }
+        section { margin-bottom: 20px; }
+        header { background-color: black; padding: 10px 0; margin: 0; position: absolute; top: 0; left: 0; right: 0; }
+        h1 { color: white; }
+        #portugueseContent, #germanContent { display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JPortfolio</h1>
+        <button id="languageToggle">EN - PT - DE</button>
+    </header>
+    <main>
+        <section id="englishContent">
+            <h2>About Me</h2>
+            <p>I'm a 17-year-old high school student and a programmer by hobby.</p>
+            <p>This is where I will link to my projects on GitHub</p>
+            <h2>My Projects</h2>
+            <h3>Funachi</h3>
+            <p>An encryption algorithm with salting that was based on ROT15</p>
+            <p>built for a school project.</p>
+            <p>this is still a WIP.</p>
+            <a href="https://github.com/Ciphare/Sandbox/blob/main/main.py">GitHub link</a>
+        </section>
+        <section id="portugueseContent">
+            <h2>Sobre Mim</h2>
+            <p>Sou um estudante do ensino médio de 17 anos e programador por hobby.</p>
+            <p>Aqui você encontrará links para os meus projetos no GitHub.</p>
+            <h2>Meus Projetos</h2>
+            <h3>Funachi</h3>
+            <p>Um algoritmo de criptografia com salting baseado no ROT15</p>
+            <p>desenvolvido para um projeto escolar.</p>
+            <p>Isso ainda e um projeto em desenvolimento</p>
+            <a href="https://github.com/Ciphare/Sandbox/blob/main/main.py">Link para o GitHub</a>
+        </section>
+        <section id="germanContent">
+            <h2>Über mich</h2>
+            <p>Ich bin ein 17-jähriger Schüler und ein Programmierer aus Hobby.</p>
+            <p>Hier werde ich Links zu meinen Projekten auf GitHub bereitstellen.</p>
+            <h2>Meine Projekte</h2>
+            <h3>Funachi</h3>
+            <p>Ein Verschlüsselungsalgorithmus mit Salzen, der auf ROT15 basiert</p>
+            <p>Für ein Schulprojekt entwickelt.</p>
+            <p>Dies ist noch nicht fertig.</p>
+            <a href="https://github.com/Ciphare/Sandbox/blob/main/main.py">GitHub Link</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 JPSF - All rights reserved</p>
+    </footer>
+    <script>
+        var currentLanguage = "english";
+        function toggleLanguage() {
+            var englishContent = document.getElementById("englishContent");
+            var portugueseContent = document.getElementById("portugueseContent");
+            var germanContent = document.getElementById("germanContent");
+            englishContent.style.display = "none";
+            portugueseContent.style.display = "none";
+            germanContent.style.display = "none";
+            if (currentLanguage === "english") {
+                portugueseContent.style.display = "block";
+                currentLanguage = "portuguese";
+            } else if (currentLanguage === "portuguese") {
+                germanContent.style.display = "block";
+                currentLanguage = "german";
+            } else {
+                englishContent.style.display = "block";
+                currentLanguage = "english";
+            }
+        }
+        document.getElementById("languageToggle").addEventListener("click", toggleLanguage);
+    </script>
+</body>
+</html>
